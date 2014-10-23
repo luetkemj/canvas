@@ -142,32 +142,92 @@ $.ajax({
     url: 'http://canvas.dev/wp-json/posts/?_jsonp=?',
     dataType: 'jsonp',
 }).success( function(response){
+
+
+
+
     console.log(response);  
     var tracker = 0;
 
-    $(window).scroll(function() {
-       if($(window).scrollTop() + $(window).height() == $(document).height()) {
-          
-          console.log("bottom!");
-          
-          var user = ich.user(response[tracker]);
-          $('#main').append( $(user).hide().fadeIn(2000) );
-          tracker = tracker + 1;
-          
-          if ( tracker >= response.length ){
-            $(this).html('nope').off();
-          }
+    // $(window).scroll(function() {
+    //    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                    
+    //       var user = ich.user(response[tracker]);
+    //       $('#main').append( $(user).hide().fadeIn(2000) );
 
-       }
+    //       tracker = tracker + 1;
+          
+    //       if ( tracker >= response.length ){
+    //         $(this).html('nope').off();
+    //       }
+
+    //    }
+    // });
+
+
+
+// var item = $('.canvas article');
+// var canvas = $('.canvas .frame');
+
+// var canvasWidth;
+
+// item.scroll(function() {
+//    if(item.scrollLeft() + item.width() == canvas.width()) {
+//     var user = ich.user(response[tracker]);
+//     $('#main').append( $(user).hide().fadeIn(2000) );
+    
+//     tracker = tracker + 1;
+    
+//     if ( tracker >= response.length ){
+//       $(this).html('nope').off();
+//     }
+
+// console.log('blam');
+
+//    }
+// });
+
+
+
+
+});
+
+// console.log( $('#filmstrip-wrapper').width() );
+$(window).load(function(){
+
+    var width = 0;
+
+    $( '#filmstrip-wrapper img' ).each(function(){
+        width = width + $(this).width();
     });
 
+    $('#filmstrip-wrapper').width( width );
+
+});
+
+$('#filmstrip-viewport').scroll( function() {
+    // if(  $('#filmstrip-viewport').scrollLeft() + $('#filmstrip-viewport').width() == $('#filmstrip-wrapper').width()  ) {
+      console.log( $('#filmstrip-viewport').scrollLeft() );
+      console.log( $('#filmstrip-wrapper').width() );
+    // }
 });
 
 
 
+// some dev notes that I need for devving stuff and whatnot...
+// look to filmstrip for some clues https://github.com/luetkemj/filmstrip
 
+// init: 
+//   get json object of all posts (or whatever I'm using for this)
+//   set vars for 
+//     canvas width
+//     content width
 
-
+//   start appending posts
+//     as each appends determine it's width and add that to the content width
+//     once content width > canvas width stop appending posts
+//     when you scroll append new item but find it's width and add that to the canvas width so you can keep scrolling
+//     incorporate a some sort of throttle such that you can't accidentally load a hundred posts or something crazy.
 
 
 

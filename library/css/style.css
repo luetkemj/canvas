@@ -792,7 +792,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   position: relative;
   font-family: "Ubuntu", Helvetica, Arial, sans-serif;
   text-decoration: none;
-  color: #fff;
+  color: white;
   font-size: 0.9em;
   font-size: 34px;
   line-height: 34px;
@@ -806,7 +806,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 }
 /* line 44, ../scss/modules/_buttons.scss */
 .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
-  color: #fff;
+  color: white;
   text-decoration: none;
 }
 /* line 50, ../scss/modules/_buttons.scss */
@@ -977,7 +977,7 @@ textarea.is-invalid,
 .field.is-invalid {
   color: #fbe3e4;
   border-color: #fbe3e4;
-  background-color: #fff;
+  background-color: white;
   background-position: 99% center;
   background-repeat: no-repeat;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDREQkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDREQ0YwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ3ODRGRkE2RjA0QTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERBRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+U8iT5wAAAedJREFUeNqk1U9I02Ecx/HtV3aIFAc1hcRDUoGXRAq0oNLA2CrsEFmHbikZu0iQYIFGYAiegkCpLipBxPpDEBMUzB0EhSG2LhG7hMR2GviPgUTvB57Bw8P3+U23B16HPX8+e/b8nt93wezZSMCnhXETF3AcB5BDCnH8Dq98ExcGHcFn8Ah3cdDni+fxnPDv9oAnTB7CKu6VCFXtChZy56LxUjt+jfuB8toSOth9wd7xWAWhqrUjYR/FRTwWJm+iIPT/w7bQf5ljiZnBg45dtKFX6H+LU8gIY8OEV6vgTkStwXWE8BPTGDHGPqNPz2mCfSOOYkA99TvCt1bhGPL68zMcwmncMuape10jrI+q4BbHi/FLn31S9z2x5tRhTc+1W506ipM+T3oRD4X+8+qtc4SqFvL0z/Fr14S+Szjis8bz9Lvvaq8cwS/wwGfdlqfPSWqTiFlX77o13u9Ym1PBs8JAytpRoy44X9Ft9E/gvbA+rYKn8NcaaMVc8UHgBw4b9/iqUQZ6hOAJFbyDcUflmsEX4a6+wTtHGfhAIUqa1U29Zc2BytouThD8x6xuN5CtMPi2CrXLZkZf/HyZoRFCP7n+QVR4PV7uI/AjGghN7OU/r1ilnqILtfpNC+o6vIFljBKYlhb/F2AAgaBsWR5wRiIAAAAASUVORK5CYII=);
@@ -1019,7 +1019,7 @@ textarea.is-valid,
 .field.is-valid {
   color: #e6efc2;
   border-color: #e6efc2;
-  background-color: #fff;
+  background-color: white;
   background-position: 99% center;
   background-repeat: no-repeat;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDRERkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDRFMEYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0MzQ0NERERjA0QjExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERFRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+7olkTQAAAfhJREFUeNqklU9oE0EUhzdroWjw0tBeWlDxkEaIp55TsCU9VKIgCrHBelA8CQ1Kr1WPbZrQ3gqtQqvGqxpQc2jBk6BIIaAGD4qNCKURpDSKiPi98gLDsJt//uBjsztvfnk7895sIPAw6/joGMThFJyAXn2+A+9gA57/TaY/eU0OeBgfhGm4DiGnsb7DAszxBz/NAdcKjMJLuNWCqagHbsscN5+L+hmH4QkMOe1L5jzFfNA2PgT34ajTuY7AGuZB0/hmh5m+gS0r8xv1zRvg+gGCHZiOwnF4DP3iB3sQkYxPd2C6CWfhB9Xwlus5+K1j4jXuaq3a+gM1H9OPcAa+7q9lPidZJqHbiIm7Wg22rsEI7FrPSzAMX/T+ADyAKSsu7Fr1KplehLvwCs5DvfBf65p+MypqRbO1FXK9utH4/QKuaqYTsG3E3INJv00Q46px3+XxanJ/Ute2/vqP4FKDza2KcdljIKdnhS0xXYULTaqmLMZFn8FFSFtvt6x70ExFCS5oUXspq2ssa7oEl1swFa+CGFdgtkHgPDyDKy02zyxNU6lXRUZb1EuHYayNNs+Yh5B0WQo+/8fpJnNTZFuzz2OpjoQ2QruSOQlMy35fEGmEGMxY9e1brxobw7TkWA1h6xfckUPb+JhGoE/Hpfvew7qUld/H9J8AAwDpw3WYrxcZ3QAAAABJRU5ErkJggg==);
@@ -1221,7 +1221,7 @@ LAYOUT & GRID STYLES
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
 .wrap:after {
   content: " ";
   display: block;
@@ -1316,7 +1316,7 @@ HEADER STYLES
 }
 /* line 12, ../scss/chunks/_header.scss */
 #logo a {
-  color: #fff;
+  color: white;
 }
 
 /*********************
@@ -1350,7 +1350,7 @@ and more scalable.
 /* line 20, ../scss/chunks/_navigation.scss */
 .nav li a {
   display: block;
-  color: #fff;
+  color: white;
   text-decoration: none;
   padding: 0.75em;
   /*
@@ -1369,9 +1369,9 @@ and more scalable.
 /* end .nav */
 /* line 1, ../scss/chunks/_vcubar.scss */
 .vcubar {
-  background: #fff;
-  border-top: 3px solid #474D4D;
-  border-bottom: 3px solid #474D4D;
+  background: white;
+  border-top: 3px solid #474d4d;
+  border-bottom: 3px solid #474d4d;
 }
 /* line 6, ../scss/chunks/_vcubar.scss */
 .vcubar a {
@@ -1415,7 +1415,7 @@ and more scalable.
   position: relative;
   overflow: hidden;
 }
-/* line 12, ../../../../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
 .vcubar .inner-vcubar:after {
   content: " ";
   display: block;
@@ -1441,7 +1441,7 @@ a.vcu-fallback {
     max-width: 346px;
   }
 }
-/* line 92, ../../../../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/breakpoint-2.5.0/stylesheets/_breakpoint.scss */
+/* line 92, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/breakpoint-2.4.2/stylesheets/_breakpoint.scss */
 .no-mediaqueries .no-svg a.vcu-fallback {
   max-width: 346px;
 }
@@ -1489,7 +1489,7 @@ a.vcuarts-fallback {
     display: block;
   }
 }
-/* line 92, ../../../../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/breakpoint-2.5.0/stylesheets/_breakpoint.scss */
+/* line 92, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/breakpoint-2.4.2/stylesheets/_breakpoint.scss */
 .no-mediaqueries .vcu-name {
   display: block;
 }
@@ -1504,10 +1504,10 @@ POSTS & CONTENT STYLES
 
 /* line 11, ../scss/chunks/_content.scss */
 .hentry {
-  background-color: #fff;
+  background-color: white;
   border-radius: 3px;
   margin-bottom: 1.5em;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 }
 /* line 17, ../scss/chunks/_content.scss */
 .hentry header {
@@ -1691,7 +1691,7 @@ PAGE NAVI STYLES
 /* line 13, ../scss/chunks/_page-navi.scss */
 .pagination ul {
   display: inline-block;
-  background-color: #fff;
+  background-color: white;
   white-space: nowrap;
   padding: 0;
   clear: both;
@@ -1722,7 +1722,7 @@ PAGE NAVI STYLES
 /* line 43, ../scss/chunks/_page-navi.scss */
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
   background-color: #2980b9;
-  color: #fff;
+  color: white;
 }
 /* line 49, ../scss/chunks/_page-navi.scss */
 .pagination .current {
@@ -1731,7 +1731,7 @@ PAGE NAVI STYLES
 }
 /* line 53, ../scss/chunks/_page-navi.scss */
 .pagination .current:hover, .pagination .current:focus {
-  background-color: #fff;
+  background-color: white;
   color: #5c6b80;
 }
 
@@ -1839,7 +1839,7 @@ COMMENT STYLES
 }
 /* line 128, ../scss/chunks/_comments.scss */
 .comment.odd {
-  background-color: #fff;
+  background-color: white;
 }
 /* line 131, ../scss/chunks/_comments.scss */
 .comment.even {
@@ -1947,10 +1947,10 @@ SIDEBARS & ASIDES
 
 /* line 30, ../scss/chunks/_sidebars.scss */
 .no-widgets {
-  background-color: #fff;
+  background-color: white;
   padding: 1.5em;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 2px;
   margin-bottom: 1.5em;
 }
@@ -1975,6 +1975,19 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+/* line 1, ../scss/chunks/_canvas.scss */
+#filmstrip-viewport {
+  margin: 0 auto;
+  overflow-x: scroll;
+}
+
+/* line 6, ../scss/chunks/_canvas.scss */
+#filmstrip-wrapper img {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  float: left;
+}
+
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with
