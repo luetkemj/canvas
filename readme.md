@@ -1,4 +1,11 @@
-# Bones
+# canvas
+Built with [VCUarts Bones](https://github.com/VCUarts/VCUarts-bones) which is built with regular [Bones](https://github.com/eddiemachado/bones/) both of which are built with lots of &hearts;.
+
+Sub-Ultra-Alpha [you have been warned]
+
+![](http://i.imgur.com/w1skJxF.gif)
+
+### Bones
 A Lightweight Wordpress Development Theme
 
 Bones is designed to make the life of developers easier. It's built
@@ -34,5 +41,3 @@ doing with my life, follow me on twitter: @eddiemachado
 Yeoman generator to quickly install Bones Wordpress starter theme into your Wordpress theme folder
 by 0dp
 https://github.com/0dp/generator-wp-bones
-
-
