@@ -85,7 +85,7 @@ module.exports = function(grunt) {
                 files: ['library/css/**/*.css']
             },
             js: {
-                files: ['library/js/**/*'],
+                files: ['library/js/**/*','!library/js/main.js'],
                 tasks: ['concat']
             },
             livereload: {

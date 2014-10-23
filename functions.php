@@ -237,12 +237,37 @@ function get_development_scripts(){
     return "
     <script src='//localhost:35729/livereload.js'></script> 
 
-    <script src='//172.23.48.217:3000/socket.io/socket.io.js'></script>
-    <script>var ___socket___ = io.connect('http://172.23.48.217:3000');</script>
-    <script src='//172.23.48.217:3001/client/browser-sync-client.0.8.2.js'></script>";
+    <script src='//172.22.218.86:3000/socket.io/socket.io.js'></script>
+    <script>var ___socket___ = io.connect('http://172.22.218.86:3000');</script>
+    <script src='//172.22.218.86:3001/client/browser-sync-client.0.8.2.js'></script>";
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+// testing some wp-api extenstions
+// https://github.com/WP-API/WP-API/issues/433
+
+function json_api_prepare_post( $post_response, $post, $context ) {
+
+  $image = get_field('image', $post['ID']);
+
+  $post_response['image'] = $image;
+
+  return $post_response;
+}
+add_filter( 'json_prepare_post', 'json_api_prepare_post', 10, 3 );
+
+
 
 
 

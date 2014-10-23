@@ -114,4 +114,46 @@ jQuery(document).ready(function($) {
   loadGravatars();
 
 
+
+
+
+
+$.ajax({
+    type: "GET",
+    url: 'http://canvas.dev/wp-json/posts/?_jsonp=?',
+    dataType: 'jsonp',
+}).success( function(response){
+    console.log(response);  
+    var tracker = 0;
+
+    $(window).scroll(function() {
+       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+          
+          console.log("bottom!");
+          
+          var user = ich.user(response[tracker]);
+          $('#main').append( $(user).hide().fadeIn(2000) );
+          tracker = tracker + 1;
+          
+          if ( tracker >= response.length ){
+            $(this).html('nope').off();
+          }
+
+       }
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 }); /* end of as page load scripts */
