@@ -130,43 +130,43 @@ $.ajax({
     console.log(response);  
     var tracker = 0;
 
-    // $(window).scroll(function() {
-    //    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+    $(window).scroll(function() {
+       if($(window).scrollTop() + $(window).height() == $(document).height()) {
                     
-    //       var user = ich.user(response[tracker]);
-    //       $('#main').append( $(user).hide().fadeIn(2000) );
+          var user = ich.user(response[tracker]);
+          $('#main').append( $(user).hide().fadeIn(2000) );
 
-    //       tracker = tracker + 1;
+          tracker = tracker + 1;
           
-    //       if ( tracker >= response.length ){
-    //         $(this).html('nope').off();
-    //       }
+          if ( tracker >= response.length ){
+            $(this).html('nope').off();
+          }
 
-    //    }
-    // });
+       }
+    });
 
 
 
-// var item = $('.canvas article');
-// var canvas = $('.canvas .frame');
+var item = $('.canvas article');
+var canvas = $('.canvas .frame');
 
-// var canvasWidth;
+var canvasWidth;
 
-// item.scroll(function() {
-//    if(item.scrollLeft() + item.width() == canvas.width()) {
-//     var user = ich.user(response[tracker]);
-//     $('#main').append( $(user).hide().fadeIn(2000) );
+item.scroll(function() {
+   if(item.scrollLeft() + item.width() == canvas.width()) {
+    var user = ich.user(response[tracker]);
+    $('#filmstrip-viewport').append( $(user).hide().fadeIn(2000) );
     
-//     tracker = tracker + 1;
+    tracker = tracker + 1;
     
-//     if ( tracker >= response.length ){
-//       $(this).html('nope').off();
-//     }
+    if ( tracker >= response.length ){
+      $(this).html('nope').off();
+    }
 
-// console.log('blam');
+console.log('blam');
 
-//    }
-// });
+   }
+});
 
 
 
