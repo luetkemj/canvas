@@ -9,16 +9,44 @@ module.exports = function(grunt) {
             options: {
               cssDir: 'library/css',
               sassDir: 'library/scss',
-              imagesDir: 'library/images',
-              javascriptsDir: 'library/js',
               environment: 'development',
               relativeAssets: true,
               outputStyle: 'expanded',
               raw: 'preferred_syntax = :scss\n',
-              require: ['susy','breakpoint'],
-              watch: true
+              require: ['susy','breakpoint']
             }
           }
+        },
+
+        watch: {
+            scss: {
+                files: ['library/scss/**/*.scss'],
+                tasks: ['compass']
+            },
+            css: {
+                files: ['library/css/**/*.css']
+            },
+            js: {
+                files: ['library/js/**/*.js'],
+                tasks: ['concat']
+            },
+            livereload: {
+                files: ['**/*.html', '**/*.php', '**/*.js', '**/*.css', '!**/node_modules/**'],
+                options: { livereload: true }
+            }
+        },
+
+        browserSync: {
+            files: {
+                src : 'library/css/style.css'
+            },
+            options: {
+                watchTask: true // < VERY important
+            }
+            // ,
+            // options: {
+            //     proxy: "vcuartsbones.dev"
+            // }
         },
  
         autoprefixer: {
@@ -45,12 +73,6 @@ module.exports = function(grunt) {
             }
         },
  
-        browserSync: {
-            files: {
-                src : 'library/css/style.css'
-            }
-        },
- 
         jshint: {
             all: [
                 'library/js/*.js',
@@ -64,7 +86,8 @@ module.exports = function(grunt) {
             footer: {
                 src: [
                     'library/js/libs/*.js', // All JS in the libs folder
-                    'library/js/scripts.js'  // This specific file
+                    'library/js/scripts.js',  // This specific file
+                    '!library/js/libs/modernizr.custom.min.js'
                 ],
                 dest: 'library/js/main.js',
             }
@@ -77,38 +100,15 @@ module.exports = function(grunt) {
             }
         },
  
-        watch: {
-            scss: {
-                files: ['library/scss/**/*.scss']
-            },
-            css: {
-                files: ['library/css/**/*.css']
-            },
-            js: {
-                files: ['library/js/**/*','!library/js/main.js'],
-                tasks: ['concat']
-            },
-            livereload: {
-                files: ['**/*.html', '**/*.php', '**/*.js', '**/*.css', '!**/node_modules/**'], // add files to watch to trigger a reload
-                options: { livereload: true }
-            }
-        },
- 
         imagemin: {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'library/images/dev/',
+                    cwd: 'library/images/',
                     src: ['**/*.{png,jpg,gif,svg,ico}'],
                     dest: 'library/images/'
                 }]
             }
-        },
- 
-        clean: {
-            test: [
-                'library/images/dev/*' //uncomment to clean img dir too
-            ]
         },
  
         devcode : {
@@ -135,17 +135,15 @@ module.exports = function(grunt) {
 
         concurrent: {
             watch: {
-                tasks: ['watch', 'compass'],
+                tasks: ['watch', 'compass', 'browserSync'],
                 options: {
                     logConcurrentOutput: true
                 }
             }
-        },
- 
- 
+        } 
     });
  
-    // 3. Where we tell Grunt we plan to use this plug-in.
+    // 3. Where we tell Grunt what plugins to use
  
     // Sass
     grunt.loadNpmTasks('grunt-contrib-compass');
@@ -172,32 +170,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
  
- 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
- 
-    // cleans directories, does everything for css, js, and images for deploy
-    grunt.registerTask('prod', ['clean', 'img', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
- 
-    // runs Sass, autoprefixer, media query combine, and minify
-    grunt.registerTask('css', ['watch:sass']);
- 
-    // combines and minifies js on js changes
-    grunt.registerTask('js', ['watch:js']);
- 
-    // reloads on any html or php changes
-    // you can add more files to watch in the settings
-    grunt.registerTask('reload', ['watch:livereload']);
- 
-    // injects new css into open page on css change
-    grunt.registerTask('sync', ['browserSync']);
- 
-    // opimizes images in dev and moves them to prod
-    grunt.registerTask('img', ['imagemin']);
- 
-    // deletes all files in build directories (be careful with this one)
-    grunt.registerTask('delete', ['clean']);
- 
-    // compiles sass once
-    grunt.registerTask('default', ['autoprefixer', 'cmq', 'cssmin']);
- 
+    grunt.registerTask('init', ['build']);
+    grunt.registerTask('dev', ['browserSync','watch']);
+    grunt.registerTask('build', ['imagemin', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify','devcode:dist']);
 };
