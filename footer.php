@@ -13,10 +13,10 @@
 			<div class="site-info">
 				<?php do_action('portra_credits'); ?>
 				<?php printf(__('<a href="%s">%s</a> by <a href="%s">%s</a>', 'portra'),
-					'http://wpshower.com/themes/portra',
-					'Portra',
-					'http://wpshower.com/',
-					'Wpshower'
+					'https://github.com/luetkemj/canvas',
+					'Infinite Canvas',
+					'http://luetkemj.com/',
+					'luetkemj'
 				); ?>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->

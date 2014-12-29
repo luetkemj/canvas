@@ -28,7 +28,7 @@ get_header(); ?>
 		</a>
 		<?php if (get_the_title() != ''): ?>
 		<div>
-			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<?php the_title(); ?>
 
 			| <a href="#post-comments-<?php the_ID(); ?>" class="open-popup-link"><?php comments_number('0 comments', '1 comment', '% comments', '', 'comments disabled'); ?></a> 
 		</div>
