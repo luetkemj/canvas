@@ -317,12 +317,13 @@ class wpShower {
 add_filter('the_content', array('wpShower', 'catchGallery'), 1, 1);
 
 
+// Add option page support
+if( function_exists('acf_add_options_page') ) {	
+	acf_add_options_page();
+}
 
 
-
-
-
-
+// query setup for index home
 function set_order_home($query) {
 if ($query->is_home() AND $query->is_main_query()) {
 $query->set('order', 'ASC');

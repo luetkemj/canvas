@@ -33,6 +33,33 @@ if (!function_exists('ic_paging_nav')):
 	 * @return void
 	 */
 	function ic_paging_nav() {
+		// get theme options
+		$infinite_looping = get_field('infinite_looping', 'option');
+		$loop_at = get_field('loop_at', 'option');
+		
+		$loop_at_page = $GLOBALS['wpdb']->get_results( "SELECT
+														    *
+														FROM (
+														    SELECT
+														        ID as id
+														    , post_date
+														    , post_title
+														    , @rownum := @rownum + 1 AS position
+														    FROM
+														        wp_posts
+														    , (SELECT @rownum := 0) AS rownum
+														    WHERE
+														        post_type = 'post'
+														    AND post_status = 'publish'
+														    ORDER BY
+														        post_date ASC
+														) as post_position
+														WHERE
+														    id = $loop_at", OBJECT );
+
+
+
+
 		// Don't print empty markup if there's only one page.
 		if ($GLOBALS['wp_query']->max_num_pages < 2) {
 			return;
@@ -42,8 +69,8 @@ if (!function_exists('ic_paging_nav')):
 		<nav class="navigation paging-navigation" role="navigation">
 			<?php
 
-			if ( $GLOBALS['wp_query']->max_num_pages == get_query_var('paged') ) {
-				echo '<a href="http://playground.dev/portra-test/?paged=5">&infin;</a>';
+			if ( ($infinite_looping == 'yes') && ($GLOBALS['wp_query']->max_num_pages == get_query_var('paged')) ) {
+				echo '<a href="http://playground.dev/portra-test/?paged='.$loop_at_page[0]->position.'">&infin;</a>';
 			} else {
 				next_posts_link();
 			}
