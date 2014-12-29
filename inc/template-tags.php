@@ -43,7 +43,7 @@ if (!function_exists('ic_paging_nav')):
 			<?php
 
 			if ( $GLOBALS['wp_query']->max_num_pages == get_query_var('paged') ) {
-				echo '<a href="http://playground.dev/portra-test/">&infin;</a>';
+				echo '<a href="http://playground.dev/portra-test/?paged=5">&infin;</a>';
 			} else {
 				next_posts_link();
 			}

@@ -326,6 +326,7 @@ add_filter('the_content', array('wpShower', 'catchGallery'), 1, 1);
 function set_order_home($query) {
 if ($query->is_home() AND $query->is_main_query()) {
 $query->set('order', 'ASC');
+$query->set('posts_per_page', 1);
 	}
 }
 
