@@ -1,5 +1,23 @@
 <?php
 /**
+ * Required: set 'ot_theme_mode' filter to true.
+ */
+add_filter( 'ot_theme_mode', '__return_true' );
+
+/**
+ * Required: include OptionTree.
+ */
+require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
+
+/**
+ * Theme Options
+ */
+require( trailingslashit( get_template_directory() ) . 'inc/theme-options.php' );
+
+
+
+
+/**
  * Portra functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the

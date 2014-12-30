@@ -34,10 +34,10 @@ if (!function_exists('ic_paging_nav')):
 	 */
 	function ic_paging_nav() {
 		// get theme options
-		$infinite_looping = get_field('infinite_looping', 'option');
-		$loop_at = get_field('loop_at', 'option');
+		$loop_on_off = ot_get_option( 'loop_on_off' );
+		$loop_starts_at = ot_get_option( 'loop_starts_at' );
 		
-		$loop_at_page = $GLOBALS['wpdb']->get_results( "SELECT
+		$loop_starts_at_page = $GLOBALS['wpdb']->get_results( "SELECT
 														    *
 														FROM (
 														    SELECT
@@ -55,7 +55,7 @@ if (!function_exists('ic_paging_nav')):
 														        post_date ASC
 														) as post_position
 														WHERE
-														    id = $loop_at", OBJECT );
+														    id = $loop_starts_at", OBJECT );
 
 
 
@@ -69,8 +69,8 @@ if (!function_exists('ic_paging_nav')):
 		<nav class="navigation paging-navigation" role="navigation">
 			<?php
 
-			if ( ($infinite_looping == 'yes') && ($GLOBALS['wp_query']->max_num_pages == get_query_var('paged')) ) {
-				echo '<a href="http://playground.dev/portra-test/?paged='.$loop_at_page[0]->position.'">&infin;</a>';
+			if ( ($loop_on_off == 'on') && ($GLOBALS['wp_query']->max_num_pages == get_query_var('paged')) ) {
+				echo '<a href="http://playground.dev/portra-test/?paged='.$loop_starts_at_page[0]->position.'">&infin;</a>';
 			} else {
 				next_posts_link();
 			}
