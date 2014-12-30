@@ -40,6 +40,13 @@ function custom_theme_options() {
     ),
     'settings'        => array( 
       array(
+          'id'          => 'category_select',
+          'label'       => __( 'Category Select', 'theme-text-domain' ),
+          'desc'        => __( 'Select the category used for your comic.', 'theme-text-domain' ),
+          'type'        => 'category-select',
+          'section'     => 'option_types',
+      ),
+      array(
         'id'          => 'loop_on_off',
         'label'       => __( 'Loop', 'theme-text-domain' ),
         'desc'        => sprintf( __( 'Turn infinite looping on or off.', 'theme-text-domain' )),
@@ -54,24 +61,44 @@ function custom_theme_options() {
         'condition'   => '',
         'operator'    => 'and'
       ),
+      // array(
+      //   'id'          => 'loop_starts_at',
+      //   'label'       => __( 'Loop at', 'theme-text-domain' ),
+      //   'desc'        => sprintf( __( 'Select a page to begin looping at. Useful for skipping title page and front matter.', 'theme-text-domain' ) ),
+      //   'std'         => '',
+      //   'type'        => 'custom-post-type-select',
+      //   'section'     => 'option_types',
+      //   'rows'        => '',
+      //   'post_type'   => 'post',
+      //   'taxonomy'    => '',
+      //   'min_max_step'=> '',
+      //   'class'       => '',
+      //   'condition'   => 'loop_on_off:is(on)',
+      //   'operator'    => 'and'
+      // ),
+
       array(
         'id'          => 'loop_starts_at',
         'label'       => __( 'Loop at', 'theme-text-domain' ),
-        'desc'        => sprintf( __( 'Select a page to begin looping at. Useful for skipping title page and front matter.', 'theme-text-domain' ) ),
-        'std'         => '',
-        'type'        => 'custom-post-type-select',
+        'desc'        => __( 'Select a page to begin looping at. Useful for skipping title page and front matter.', 'theme-text-domain' ),
+        'type'        => 'post-select',
         'section'     => 'option_types',
-        'rows'        => '',
-        'post_type'   => 'post',
-        'taxonomy'    => '',
-        'min_max_step'=> '',
-        'class'       => '',
-        'condition'   => 'loop_on_off:is(on)',
-        'operator'    => 'and'
-      )
+      ),
     )
   );
   
+
+  $category_select = ot_get_option( 'category_select');
+// echo $category_select;
+
+  // Populate the drop down select from posts belonging to this category (14)
+  add_filter( 'ot_type_post_select_query', 'ic_ot_type_post_select_query_set_cat', 10, 2 );
+  function ic_ot_type_post_select_query_set_cat( $query, $field_id ) {
+      if( 'loop_starts_at' == $field_id ) {
+          return array_merge( $query, array( 'cat' => $category_select ) );
+      }       
+  }
+
   /* allow settings to be filtered before saving */
   $custom_settings = apply_filters( ot_settings_id() . '_args', $custom_settings );
   
