@@ -26,6 +26,13 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 
+
+<!-- NIVO THEME STYLES -->
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/Nivo-Lightbox-master/themes/default/default.css" type="text/css" />
+<!-- NIVO THEME STYLES -->
+
+
+
 	
 	<?php comments_popup_script(400, 500); ?>
 </head>

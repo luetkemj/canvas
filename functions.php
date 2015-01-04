@@ -353,3 +353,28 @@ $query->set('cat', $category_select);
 }
 
 add_action('pre_get_posts', 'set_order_home');
+
+
+
+
+
+// Add datatype to popup comments
+apply_filters ( 'comments_popup_link_attributes', $attributes  );
+
+add_filter( 'comments_popup_link_attributes' , 'make_popup');
+
+function make_popup($attributes) {
+ 
+  $attributes = 'data-lightbox-type="iframe"';
+ 
+  return $attributes;
+ 
+}
+
+
+
+
+
+
+
+

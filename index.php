@@ -20,9 +20,9 @@ get_header(); ?>
 	if (have_posts()):
 		// Start the Loop.
 		while (have_posts()): the_post();
-	?><!--
+	?>
 
-	--><div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<a class="image_link">
 			<?php echo portra_image_tag(get_post_thumbnail_id()); ?>
 		</a>
@@ -37,14 +37,23 @@ get_header(); ?>
 			<?php the_content(); ?>
 		</div>
 		
-		<div id="post-comments-<?php the_ID(); ?>" class="mfp-hide comment-popup">
-			<?php comments_template(); ?>
-		</div>
+
+<?php
+	if ( comments_open() ) :
+	  echo '<p>';
+	  comments_popup_link( 'No comments yet', '1 comment', '% comments', 'ajax-popup-link comments-link', 'Comments are off for this post');
+	  echo '</p>';
+	endif;
+?>
+
+
+
+
 
 		<?php endif; ?>
-	</div><!--
+	</div>
 
-	--><?php
+	<?php
 		endwhile;
 		// portra_paging_nav();
 		ic_paging_nav();

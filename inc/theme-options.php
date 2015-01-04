@@ -61,22 +61,6 @@ function custom_theme_options() {
         'condition'   => '',
         'operator'    => 'and'
       ),
-      // array(
-      //   'id'          => 'loop_starts_at',
-      //   'label'       => __( 'Loop at', 'theme-text-domain' ),
-      //   'desc'        => sprintf( __( 'Select a page to begin looping at. Useful for skipping title page and front matter.', 'theme-text-domain' ) ),
-      //   'std'         => '',
-      //   'type'        => 'custom-post-type-select',
-      //   'section'     => 'option_types',
-      //   'rows'        => '',
-      //   'post_type'   => 'post',
-      //   'taxonomy'    => '',
-      //   'min_max_step'=> '',
-      //   'class'       => '',
-      //   'condition'   => 'loop_on_off:is(on)',
-      //   'operator'    => 'and'
-      // ),
-
       array(
         'id'          => 'loop_starts_at',
         'label'       => __( 'Loop at', 'theme-text-domain' ),
