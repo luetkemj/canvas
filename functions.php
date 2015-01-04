@@ -152,6 +152,10 @@ function portra_scripts() {
 		wp_enqueue_script('comment-reply');
 	}
 
+	if ( is_home() ){
+		wp_enqueue_script('nivo-lightbox', get_template_directory_uri().'/js/Nivo-Lightbox-master/nivo-lightbox.min.js', array('jquery'), '20150104', true);
+	}
+	
 	wp_enqueue_script('portra-script', get_template_directory_uri().'/js/functions.js', array('jquery'), '20140321', true);
 }
 add_action('wp_enqueue_scripts', 'portra_scripts');
