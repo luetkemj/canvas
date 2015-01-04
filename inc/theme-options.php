@@ -41,7 +41,7 @@ function custom_theme_options() {
     'settings'        => array( 
       array(
           'id'          => 'category_select',
-          'label'       => __( 'Category Select', 'theme-text-domain' ),
+          'label'       => __( 'Comic Category', 'theme-text-domain' ),
           'desc'        => __( 'Select the category used for your comic.', 'theme-text-domain' ),
           'type'        => 'category-select',
           'section'     => 'option_types',
@@ -83,17 +83,19 @@ function custom_theme_options() {
         'desc'        => __( 'Select a page to begin looping at. Useful for skipping title page and front matter.', 'theme-text-domain' ),
         'type'        => 'post-select',
         'section'     => 'option_types',
+        'condition'   => 'loop_on_off:is(on)'
       ),
     )
   );
   
 
-  $category_select = ot_get_option( 'category_select');
+  // $category_select = ot_get_option( 'category_select');
 // echo $category_select;
 
   // Populate the drop down select from posts belonging to this category (14)
   add_filter( 'ot_type_post_select_query', 'ic_ot_type_post_select_query_set_cat', 10, 2 );
   function ic_ot_type_post_select_query_set_cat( $query, $field_id ) {
+      $category_select = ot_get_option( 'category_select');
       if( 'loop_starts_at' == $field_id ) {
           return array_merge( $query, array( 'cat' => $category_select ) );
       }       

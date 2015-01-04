@@ -343,9 +343,12 @@ if( function_exists('acf_add_options_page') ) {
 
 // query setup for index home
 function set_order_home($query) {
+$category_select = ot_get_option( 'category_select');
+	
 if ($query->is_home() AND $query->is_main_query()) {
 $query->set('order', 'ASC');
 $query->set('posts_per_page', 1);
+$query->set('cat', $category_select);
 	}
 }
 

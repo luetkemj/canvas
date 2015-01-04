@@ -32,6 +32,10 @@ get_header(); ?>
 
 			| <a href="#post-comments-<?php the_ID(); ?>" class="open-popup-link"><?php comments_number('0 comments', '1 comment', '% comments', '', 'comments disabled'); ?></a> 
 		</div>
+
+		<div class="post_content">
+			<?php the_content(); ?>
+		</div>
 		
 		<div id="post-comments-<?php the_ID(); ?>" class="mfp-hide comment-popup">
 			<?php comments_template(); ?>
