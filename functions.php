@@ -153,6 +153,7 @@ function portra_scripts() {
 	}
 
 	if ( is_home() ){
+		wp_enqueue_style('nivo-lightbox-style', get_template_directory_uri().'/js/Nivo-Lightbox-master/themes/default/default.css');
 		wp_enqueue_script('nivo-lightbox', get_template_directory_uri().'/js/Nivo-Lightbox-master/nivo-lightbox.min.js', array('jquery'), '20150104', true);
 	}
 	

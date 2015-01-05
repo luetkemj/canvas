@@ -25,15 +25,6 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
-
-
-<!-- NIVO THEME STYLES -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/js/Nivo-Lightbox-master/themes/default/default.css" type="text/css" />
-<!-- NIVO THEME STYLES -->
-
-
-
-	
 	<?php comments_popup_script(400, 500); ?>
 </head>
 
