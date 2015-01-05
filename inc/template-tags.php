@@ -70,7 +70,7 @@ if (!function_exists('ic_paging_nav')):
 			<?php
 
 			if ( ($loop_on_off == 'on') && ($GLOBALS['wp_query']->max_num_pages == get_query_var('paged')) ) {
-				echo '<a href="http://playground.dev/portra-test/?paged='.$loop_starts_at_page[0]->position.'">&infin;</a>';
+				echo '<a href="'. home_url() .'/?paged='.$loop_starts_at_page[0]->position.'">&infin;</a>';
 			} else {
 				next_posts_link();
 			}
