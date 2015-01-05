@@ -28,7 +28,7 @@
 
 
 <!-- NIVO THEME STYLES -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/Nivo-Lightbox-master/themes/default/default.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/js/Nivo-Lightbox-master/themes/default/default.css" type="text/css" />
 <!-- NIVO THEME STYLES -->
 
 
