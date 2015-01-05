@@ -28,9 +28,14 @@ get_header(); ?>
 		</a>
 		<?php if (get_the_title() != ''): ?>
 		<div>
-			<?php the_title(); ?>
+			<?php 
+			the_title();
 
-			| <a href="#post-comments-<?php the_ID(); ?>" class="open-popup-link"><?php comments_number('0 comments', '1 comment', '% comments', '', 'comments disabled'); ?></a> 
+			if ( comments_open() ) :
+			  echo ' | ';
+			  comments_popup_link( 'No comments yet', '1 comment', '% comments', 'ajax-popup-link comments-link', 'Comments are off for this post');
+			endif;
+		?>
 		</div>
 
 		<div class="post_content">
@@ -38,13 +43,7 @@ get_header(); ?>
 		</div>
 		
 
-<?php
-	if ( comments_open() ) :
-	  echo '<p>';
-	  comments_popup_link( 'No comments yet', '1 comment', '% comments', 'ajax-popup-link comments-link', 'Comments are off for this post');
-	  echo '</p>';
-	endif;
-?>
+
 
 
 
