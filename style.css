@@ -909,7 +909,7 @@ img.aligncenter,
 	left: -50%;
 	width: 100%;
 	height: 100%;
-	background: #28fe2c;
+	background: #ffffff;
 	border-radius: 50%;
 }
 
@@ -1349,6 +1349,10 @@ body.page .entry-header,
 		height: 100%;
 		padding-right: 20px;
 		padding-right: 2rem;
+	}
+
+	body.home .hentry:first-child {
+		margin-right: -5px;
 	}
 
 	body.home .hentry > a {

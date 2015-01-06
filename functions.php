@@ -132,20 +132,20 @@ function portra_scripts() {
 	wp_enqueue_style('portra-style', get_stylesheet_uri());
 	// Custom styles
 	$css = is_admin_bar_showing() ? 'html {
-	height: -moz-calc(100% - 32px);
-	height: -webkit-calc(100% - 32px);
-	height: calc(100% - 32px);
-}
-
-@media (max-width: 782px) {
-	html {
-		height: -moz-calc(100% - 46px);
-		height: -webkit-calc(100% - 46px);
-		height: calc(100% - 46px);
+		height: -moz-calc(100% - 32px);
+		height: -webkit-calc(100% - 32px);
+		height: calc(100% - 32px);
 	}
-}' : 'html {
-	height: 100%;
-}';
+
+	@media (max-width: 782px) {
+		html {
+			height: -moz-calc(100% - 46px);
+			height: -webkit-calc(100% - 46px);
+			height: calc(100% - 46px);
+		}
+	}' : 'html {
+		height: 100%;
+	}';
 	wp_add_inline_style('portra-style', $css);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -153,7 +153,22 @@ function portra_scripts() {
 	}
 
 	if ( is_home() ){
+		$loading_color = ot_get_option( 'loading_color' );
+		$page_padding = ot_get_option( 'page_padding' );
+		$page_padding_rem = $page_padding/10;
+		$theme_option_home_styles = '
+			#infinite-loader > *{
+				background: '.$loading_color.';
+			}
+
+			body.home .hentry {
+				padding-right: '.$page_padding.'px;
+				padding-right: '.$page_padding_rem.'rem;
+			}
+		';
 		wp_enqueue_style('nivo-lightbox-style', get_template_directory_uri().'/js/Nivo-Lightbox-master/themes/default/default.css');
+		wp_add_inline_style('nivo-lightbox-style', $theme_option_home_styles);
+
 		wp_enqueue_script('nivo-lightbox', get_template_directory_uri().'/js/Nivo-Lightbox-master/nivo-lightbox.min.js', array('jquery'), '20150104', true);
 	}
 	

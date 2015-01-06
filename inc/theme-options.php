@@ -69,6 +69,36 @@ function custom_theme_options() {
         'section'     => 'option_types',
         'condition'   => 'loop_on_off:is(on)'
       ),
+      array(
+        'id'          => 'loading_color',
+        'label'       => __( 'loading_color', 'theme-text-domain' ),
+        'desc'        => __( 'Choose a color for the loading animation', 'theme-text-domain' ),
+        'std'         => '',
+        'type'        => 'colorpicker',
+        'section'     => 'option_types',
+        'rows'        => '',
+        'post_type'   => '',
+        'taxonomy'    => '',
+        'min_max_step'=> '',
+        'class'       => '',
+        'condition'   => '',
+        'operator'    => 'and'
+      ),
+      array(
+        'id'          => 'page_padding',
+        'label'       => __( 'Padding between pages', 'theme-text-domain' ),
+        'desc'        => __( 'Select the number of pixels between pages.', 'theme-text-domain' ),
+        'std'         => '20',
+        'type'        => 'numeric-slider',
+        'section'     => 'option_types',
+        'rows'        => '',
+        'post_type'   => '',
+        'taxonomy'    => '',
+        'min_max_step'=> '0,100,1',
+        'class'       => '',
+        'condition'   => '',
+        'operator'    => 'and'
+      ),
     )
   );
   
