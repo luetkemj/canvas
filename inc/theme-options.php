@@ -99,6 +99,21 @@ function custom_theme_options() {
         'condition'   => '',
         'operator'    => 'and'
       ),
+      array(
+        'id'          => 'max_height',
+        'label'       => __( 'The maximum height of your pages in pixels.', 'theme-text-domain' ),
+        'desc'        => __( 'Prevents pixelation of small images on large screens.', 'theme-text-domain' ),
+        'std'         => '',
+        'type'        => 'numeric-slider',
+        'section'     => 'option_types',
+        'rows'        => '',
+        'post_type'   => '',
+        'taxonomy'    => '',
+        'min_max_step'=> '0,2560,1',
+        'class'       => '',
+        'condition'   => '',
+        'operator'    => 'and'
+      ),
     )
   );
   

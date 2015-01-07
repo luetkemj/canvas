@@ -155,7 +155,9 @@ function portra_scripts() {
 	if ( is_home() ){
 		$loading_color = ot_get_option( 'loading_color' );
 		$page_padding = ot_get_option( 'page_padding' );
-		$page_padding_rem = $page_padding/10;
+		$page_padding_rem = $page_padding / 10;
+		$max_height = ot_get_option( 'max_height' );
+		$max_height_rem = $max_height / 10;
 		$theme_option_home_styles = '
 			#infinite-loader > *{
 				background: '.$loading_color.';
@@ -164,6 +166,11 @@ function portra_scripts() {
 			body.home .hentry {
 				padding-right: '.$page_padding.'px;
 				padding-right: '.$page_padding_rem.'rem;
+			}
+
+			.home .main-content{
+			  max-height: '.$max_height.'px;
+			  max-height: '.$max_height_rem.'rem;
 			}
 		';
 		wp_enqueue_style('nivo-lightbox-style', get_template_directory_uri().'/js/Nivo-Lightbox-master/themes/default/default.css');
