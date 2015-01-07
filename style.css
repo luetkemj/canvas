@@ -768,7 +768,6 @@ img.aligncenter,
 	white-space: nowrap;
 }
 
-
 /* Infinite load */
 @-webkit-keyframes buffer1 {
 	0% {
@@ -1305,7 +1304,7 @@ body.page .entry-header,
 	}
 
 	.nav-menu > li {
-		opacity: 0;
+		opacity: 1;
 	}
 
 	#top-right-menu li {
