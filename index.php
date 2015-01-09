@@ -45,7 +45,6 @@ get_header(); ?>
 		<?php endif; ?>
 	</div>
 
-	<button class="fallback"><span>&infin;</span></button>
 
 	<?php
 		endwhile;
