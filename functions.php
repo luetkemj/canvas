@@ -388,6 +388,9 @@ add_action('pre_get_posts', 'set_order_home');
 // Add datatype to popup comments
 
 if( !is_admin() ){
+
+	$attributes = '';
+
 	apply_filters ( 'comments_popup_link_attributes', $attributes  );
 
 	add_filter( 'comments_popup_link_attributes' , 'make_popup');
