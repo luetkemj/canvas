@@ -178,7 +178,7 @@ function portra_scripts() {
 
 		wp_enqueue_script('nivo-lightbox', get_template_directory_uri().'/js/Nivo-Lightbox-master/nivo-lightbox.min.js', array('jquery'), '20150104', true);
 	}
-	
+
 	wp_enqueue_script('portra-script', get_template_directory_uri().'/js/functions.js', array('jquery'), '20140321', true);
 }
 add_action('wp_enqueue_scripts', 'portra_scripts');
@@ -363,7 +363,7 @@ add_filter('the_content', array('wpShower', 'catchGallery'), 1, 1);
 
 
 // Add option page support
-if( function_exists('acf_add_options_page') ) {	
+if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
 
@@ -371,7 +371,7 @@ if( function_exists('acf_add_options_page') ) {
 // query setup for index home
 function set_order_home($query) {
 $category_select = ot_get_option( 'category_select');
-	
+
 if ($query->is_home() AND $query->is_main_query()) {
 $query->set('order', 'ASC');
 $query->set('posts_per_page', 1);
@@ -386,19 +386,20 @@ add_action('pre_get_posts', 'set_order_home');
 
 
 // Add datatype to popup comments
-apply_filters ( 'comments_popup_link_attributes', $attributes  );
 
-add_filter( 'comments_popup_link_attributes' , 'make_popup');
+if( !is_admin() ){
+	apply_filters ( 'comments_popup_link_attributes', $attributes  );
 
-function make_popup($attributes) {
- 
-  $attributes = 'data-lightbox-type="iframe"';
- 
-  return $attributes;
- 
+	add_filter( 'comments_popup_link_attributes' , 'make_popup');
+
+	function make_popup( $attributes ) {
+
+	  $attributes = 'data-lightbox-type="iframe"';
+
+	  return $attributes;
+
+	}
 }
-
-
 
 
 

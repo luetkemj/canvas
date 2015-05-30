@@ -34,9 +34,13 @@ if (!function_exists('ic_paging_nav')):
 	 */
 	function ic_paging_nav() {
 		// get theme options
-		$loop_on_off = ot_get_option( 'loop_on_off' );
-		$loop_starts_at = ot_get_option( 'loop_starts_at' );
-		
+
+		$loop_on_off = ( ot_get_option( 'loop_on_off' ) ) ? ot_get_option( 'loop_on_off' ) : 'on' ;
+		$loop_starts_at = ( ot_get_option( 'loop_starts_at' ) ) ? ot_get_option( 'loop_starts_at' ) : 1 ;
+
+		// $loop_on_off = ot_get_option( 'loop_on_off' );
+		// $loop_starts_at = ot_get_option( 'loop_starts_at' );
+
 		$loop_starts_at_page = $GLOBALS['wpdb']->get_results( "SELECT
 														    *
 														FROM (
